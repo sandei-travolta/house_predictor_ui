@@ -67,3 +67,37 @@ class PlainTextFormField extends StatelessWidget {
     );
   }
 }
+class NumberTextFormField extends StatelessWidget {
+  const NumberTextFormField({
+    super.key,
+    required this.emailController,
+    required this.labelText,
+    required this.hintText
+  });
+
+  final TextEditingController emailController;
+  final String labelText;
+  final String hintText;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 10),
+      child: TextFormField(
+        controller: emailController,
+        decoration: InputDecoration(
+          labelText: labelText,
+          hintText: hintText,
+          labelStyle: TextStyle(
+              color: Colors.black
+          ),
+        ),
+        validator: (value){
+          if(value==null||value.trim().isEmpty){
+            return "Fiel Required";
+          }
+        },
+      ),
+    );
+  }
+}
+
