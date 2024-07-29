@@ -13,22 +13,65 @@ class HousesListPage extends StatelessWidget {
               itemBuilder:(context,index){
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 200,
-                color: Colors.yellow,
-                child: Row(
-                  children: [
-                    Expanded(
-                        flex: 1,
-                        child: Container(
-                      color: Colors.black,
-                    )),
-                    Expanded(
-                        flex: 1,
-                        child: Container(
-                      color: Colors.blueAccent,
-                    ))
-                  ],
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  color: Colors.blueAccent.withOpacity(0.1),
+                  height: 200,
+                  child: Row(
+                    children: [
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                        color: Colors.black,
+                      )),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            padding: EdgeInsets.all(10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Houser Tittle",style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700
+                                ),
+                                ),
+                                const SizedBox(height: 25,),
+                                Text("Houser price",style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600
+                                ),
+                                ),
+                                Text("Houser size",style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600
+                                ),
+                                ),
+                                Text("Houser parking",style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600
+                                ),
+                                ),
+                                Text("Number of rooms",style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600
+                                ),
+                                ),
+                                Text("Houser Year",style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600
+                                ),),
+                                Text("House Location",style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w600
+                                ),)
+                              ],
+                            ),
+                      ))
+                    ],
+                  ),
                 ),
               ),
             );
