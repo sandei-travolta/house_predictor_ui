@@ -7,11 +7,12 @@ class HouseModel{
   final int parking;
   final int rooms;
   final int year;
+  final int mobileNo;
   final String location;
   final String seller;
   final String image;
 
-  HouseModel({required this.tittle, required this.price, required this.size, required this.parking, required this.rooms, required this.year, required this.location, required this.seller, required this.image});
+  HouseModel({required this.tittle, required this.price, required this.size, required this.parking, required this.rooms, required this.year,required this.mobileNo,required this.location, required this.seller, required this.image});
 
 
   Map<String,dynamic> toJson()=>{
@@ -21,6 +22,7 @@ class HouseModel{
     "Parkig":parking,
     "Rooms":rooms,
     "Year":year,
+    "MobileNo":mobileNo,
     "Location":location,
     "Sell":seller,
     "Images":image
@@ -34,6 +36,7 @@ class HouseModel{
         parking: snap["Parking"],
         rooms: snap["Rooms"],
         year: snap["Year"],
+        mobileNo: snap['MobileNo'],
         location: snap["Location"],
         seller: snap["Seller"],
         image: snap["Images"]

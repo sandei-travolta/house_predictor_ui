@@ -3,7 +3,7 @@ import 'package:house_predictor/Src/Models/HouseModel.dart';
 
 class HouseDataBase{
   FirebaseFirestore _db=FirebaseFirestore.instance;
-  Future<bool> addHouse(String tittle,int price,int size,int parking,int rooms,int year,String location,String seller,String images)async{
+  Future<bool> addHouse(String tittle,int price,int size,int parking,int rooms,int year,int mobileNo,String location,String seller,String images)async{
     try{
       HouseModel houseModel=HouseModel(
           tittle: tittle,
@@ -12,6 +12,7 @@ class HouseDataBase{
           parking: parking,
           rooms: rooms,
           year: year,
+          mobileNo:mobileNo,
           location: location,
           seller: seller,
           image: images

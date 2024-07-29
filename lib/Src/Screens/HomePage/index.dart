@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
+          /*Padding(
             padding: const EdgeInsets.all(15.0),
             child: InkWell(
               onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (_)=>MessageScreen())),
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          )*/
         ],
       ),
     );
