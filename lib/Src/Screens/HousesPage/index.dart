@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_predictor/Src/Screens/HousesList/index.dart';
 import 'package:house_predictor/Src/Screens/Widgets/textWidgets.dart';
 class HouseListingpage extends StatelessWidget {
   HouseListingpage({super.key});
@@ -59,12 +60,16 @@ class HouseListingpage extends StatelessWidget {
             fontWeight: FontWeight.w600
           ),
           ),
-      Text(
-        "Matching Houses",
-        style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w600
-        )
+      const SizedBox(height: 35,),
+      InkWell(
+        onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (_)=>HousesListPage())),
+        child: Text(
+          "Matching Houses",
+          style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w600
+          )
+        ),
       ),
         ],
       ),
