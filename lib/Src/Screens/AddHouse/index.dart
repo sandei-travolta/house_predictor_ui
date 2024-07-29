@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:house_predictor/Src/Controllers/imagePickerController.dart';
 
 import '../Widgets/textWidgets.dart';
 class AddHouse extends StatefulWidget {
@@ -20,7 +23,7 @@ class _AddHouseState extends State<AddHouse> {
   TextEditingController yearController=TextEditingController();
 
   TextEditingController locationController=TextEditingController();
-
+  File? pickedIMage=null;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -81,7 +84,16 @@ class _AddHouseState extends State<AddHouse> {
                     color: Colors.grey
                   ),
                   child: Center(
-                    child: Icon(Icons.camera_alt,size: 45,),
+                    child: pickedIMage!=null?Image.file(pickedIMage!)
+                        :
+                    IconButton(
+                        onPressed: ()async{
+                          pickedIMage=await pickImage();
+                          setState(() {
+
+                          });
+                        },
+                        icon: Icon(Icons.camera_alt,size: 45,)),
                   ),
                 ),
               ),
