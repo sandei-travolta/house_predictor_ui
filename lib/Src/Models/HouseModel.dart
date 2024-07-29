@@ -9,9 +9,9 @@ class HouseModel{
   final int year;
   final String location;
   final String seller;
-  final List<String> images;
+  final String image;
 
-  HouseModel({required this.tittle, required this.price, required this.size, required this.parking, required this.rooms, required this.year, required this.location, required this.seller, required this.images});
+  HouseModel({required this.tittle, required this.price, required this.size, required this.parking, required this.rooms, required this.year, required this.location, required this.seller, required this.image});
 
 
   Map<String,dynamic> toJson()=>{
@@ -23,7 +23,7 @@ class HouseModel{
     "Year":year,
     "Location":location,
     "Sell":seller,
-    "Images":images
+    "Images":image
   };
   static HouseModel fromSnap(DocumentSnapshot snapshot){
     var snap=snapshot.data() as Map<String,dynamic>;
@@ -36,7 +36,7 @@ class HouseModel{
         year: snap["Year"],
         location: snap["Location"],
         seller: snap["Seller"],
-        images: snap["Images"]
+        image: snap["Images"]
     );
   }
 }
