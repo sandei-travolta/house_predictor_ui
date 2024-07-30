@@ -5,7 +5,7 @@ import 'package:house_predictor/constants.dart';
 import 'package:http/http.dart' as http;
 import '../Models/Reponseodel.dart';
 
-Future<PredictionResponseModel?> makePrediction(int sizeSqft,int parkingLot,int rooms,int yearBuilt)async{
+Future<PredictionResponseModel?> makePredictionRequst(int sizeSqft,int parkingLot,int rooms,int yearBuilt)async{
   final url=Uri.parse("${apiUrl}/predict");
   final PredictionRequestModel prediction=PredictionRequestModel(
       sizeSqft: sizeSqft,

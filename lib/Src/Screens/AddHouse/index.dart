@@ -1,6 +1,10 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:house_predictor/Src/Controllers/HouseRegistration.dart';
+import 'package:house_predictor/Src/Controllers/UserStateController.dart';
 import 'package:house_predictor/Src/Controllers/imagePickerController.dart';
 
 import '../Widgets/textWidgets.dart';
@@ -23,6 +27,9 @@ class _AddHouseState extends State<AddHouse> {
   TextEditingController yearController=TextEditingController();
 
   TextEditingController locationController=TextEditingController();
+  TextEditingController parkingController=TextEditingController();
+  TextEditingController mobileNoController=TextEditingController();
+  final user=Get.find<UserStateControler>().currentUser;
   File? pickedIMage=null;
   @override
   Widget build(BuildContext context) {
@@ -49,6 +56,11 @@ class _AddHouseState extends State<AddHouse> {
                   hintText: "Size(sqFt)"
               ),
               NumberTextFormField(
+                  emailController: parkingController,
+                  labelText: "Parking",
+                  hintText: "Parking Spaces"
+              ),
+              NumberTextFormField(
                   emailController: roomsController,
                   labelText: "Rooms",
                   hintText: "No of Rooms"
@@ -56,6 +68,10 @@ class _AddHouseState extends State<AddHouse> {
               NumberTextFormField(
                   emailController: yearController,
                   labelText:"Year", hintText:"Year Built"
+              ),
+              NumberTextFormField(
+                  emailController: mobileNoController,
+                  labelText:"Mobile No", hintText:"+254Format"
               ),
               PlainTextFormField(
                   emailController: locationController,
@@ -98,14 +114,28 @@ class _AddHouseState extends State<AddHouse> {
                 ),
               ),
               const SizedBox(height: 20,),
-              Container(
-                height: 40,
-                width: 170,
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(15)
+              InkWell(
+                onTap: ()=>HouseRegistration().registerHouse(
+                    nameController.text,
+                    int.parse(priceController.text),
+                    int.parse(sizeController.text),
+                    int.parse(parkingController.text),
+                    int.parse(roomsController.text),
+                    int.parse(yearController.text),
+                    int.parse(mobileNoController.text),
+                    locationController.text,
+                    user.value!.uid,
+                    pickedIMage!,
+                    context),
+                child: Container(
+                  height: 40,
+                  width: 170,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(15)
+                  ),
+                  child: Center(child: Text("Post House",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),)),
                 ),
-                child: Center(child: Text("Post House",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),)),
               ),
               const SizedBox(height: 30,)
             ],

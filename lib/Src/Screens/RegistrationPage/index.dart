@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_predictor/Src/Controllers/registationController.dart';
 import 'package:house_predictor/Src/Screens/Widgets/textWidgets.dart';
 
 import '../LoginPage/index.dart';
@@ -38,7 +39,7 @@ class RegistrationPage extends StatelessWidget {
             ),
             const SizedBox(height: 10,),
             InkWell(
-              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>LoginPage())),
+              onTap: ()=>RegistrationController().registerUser(nameController.text,emailController.text, passwordController.text, context),
               child: Container(
                 height: 40,
                 width: 170,

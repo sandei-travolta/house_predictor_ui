@@ -83,6 +83,7 @@ class NumberTextFormField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 10),
       child: TextFormField(
+        keyboardType: TextInputType.number,
         controller: emailController,
         decoration: InputDecoration(
           labelText: labelText,

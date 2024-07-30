@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_predictor/Src/Controllers/LoginController.dart';
 import 'package:house_predictor/Src/Screens/RegistrationPage/index.dart';
 
 import '../HomePage/index.dart';
@@ -29,7 +30,7 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 50,),
             InkWell(
-              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (_)=>HomePage())),
+              onTap: ()=>LoginController().loginUser(emailController.text, passwordController.text, context),
               child: Container(
                 height: 40,
                 width: 170,

@@ -19,12 +19,12 @@ class HouseModel{
     "Tittle":tittle,
     "Price":price,
     "Size":size,
-    "Parkig":parking,
+    "Parking":parking,
     "Rooms":rooms,
     "Year":year,
     "MobileNo":mobileNo,
     "Location":location,
-    "Sell":seller,
+    "Seller":seller,
     "Images":image
   };
   static HouseModel fromSnap(DocumentSnapshot snapshot){

@@ -35,6 +35,7 @@ class HouseDataBase{
       return houses;
     }
     catch(e){
+      print(e);
       return houses;
     }
   }
