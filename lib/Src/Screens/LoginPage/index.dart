@@ -17,18 +17,23 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            PlainTextFormField(
+            Text("Login",style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w800
+            ),),
+            const SizedBox(height: 20,),
+            LoginPlainTextFormField(
                 emailController: emailController,
                 labelText: "Email",
                 hintText: "Your Email",
+                icon: Icons.email_outlined,
             ),
-            const SizedBox(height: 40,),
             PassWordTextFormField(
                 passwordController: passwordController,
                 labelText: "Password",
                 hintText: "Input Your Password",
             ),
-            const SizedBox(height: 50,),
+            const SizedBox(height: 20,),
             InkWell(
               onTap: ()=>LoginController().loginUser(emailController.text, passwordController.text, context),
               child: Container(
@@ -41,7 +46,7 @@ class LoginPage extends StatelessWidget {
                 child: Center(child: Text("Login",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),)),
               ),
             ),
-            const SizedBox(height: 10,),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

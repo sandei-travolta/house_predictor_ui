@@ -17,15 +17,23 @@ class RegistrationPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            PlainTextFormField(
+            Text("Create Account",style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w800
+            ),
+            ),
+            const SizedBox(height: 20,),
+            LoginPlainTextFormField(
                 emailController: nameController,
                 labelText: "Name",
                 hintText: "Full Name",
+                icon: Icons.person,
             ),
-            PlainTextFormField(
+            LoginPlainTextFormField(
                 emailController: emailController,
                 labelText: "Email",
                 hintText: "Enter Email",
+                icon: Icons.email_outlined,
             ),
             PassWordTextFormField(
                 passwordController: passwordController,
