@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "444190243334",
+    "project_id": "newpredictor-c52bb",
+    "storage_bucket": "newpredictor-c52bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444190243334:android:1b4ddabbd1935d39ca6187",
+        "android_client_info": {
+          "package_name": "com.example.house_predictor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1z8dhnOLVEJgrqpZy2TzqpAjAhUANWX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444190243334:android:54ae6722c942ef85ca6187",
+        "android_client_info": {
+          "package_name": "com.example.new_house_predictor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1z8dhnOLVEJgrqpZy2TzqpAjAhUANWX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
